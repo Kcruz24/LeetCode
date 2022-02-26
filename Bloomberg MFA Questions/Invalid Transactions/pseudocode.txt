@@ -1,0 +1,14 @@
+Steps:
+    0. Initialize an empty invalid_transaction list
+    1. Traverse through the transactions
+    2. For each transaction, we split the transaction by the comma
+    3. Check if the current transaction exceeds $1000, if so, add the
+       transaction to the invalid_transaction list and continue
+    4. Otherwise, run a nested loop to check for every transaction in the list if
+       if it meets the follwing conditions:
+        1. Transaction occurs within 60 min
+        2. Transaction has the same name
+        3. Transaction occurs in a different city
+       if every one of those conditions is met, we add the outside transaction
+       to the invalid_transaction list
+    5. Return the invalid_transaction list
