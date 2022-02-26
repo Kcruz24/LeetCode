@@ -1,0 +1,17 @@
+Steps:
+   1. Initialize an empty string that will store the current characters
+   2. Initialize an empty string that will store the count for characters
+   3. Initializa an empty stack
+   4. Traverse through the string
+      * If the current character is a letter, add it to the corresponding variable,
+        if is a digit, add it to the corresponding variable as well.
+      * If we encounter an opening square bracket, append the running character
+        string as well as the current digit in his respective string as a tuple
+        to the stack and reset both running variables.
+      * If we find a closing square bracket, we pop from the stack and get both
+        values, the prev character and the prev digit, we then would use our
+        running character variable to add the prev character plus the running
+        character times the count, example:
+            - encodedString = prev_char + encodedString * count
+   5. When the loop ends, the running character variable should have the encoded
+      string already, so we return it.
