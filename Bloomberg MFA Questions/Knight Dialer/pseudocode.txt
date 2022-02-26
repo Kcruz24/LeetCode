@@ -1,0 +1,30 @@
+Steps:
+    1. Create an uniderected graph to keep track of the knight jumps on the
+       phone pad
+    2. Create an auxilary list of length 10 (all the numeric cells) that will
+       represent all the possible combinations for each numeric cell, the list
+       indices will refer to every corresponding numeric cell.
+    3. Create 3 loops:
+        1. The first loop will run while there are jumps
+        2. The second loop will run for every single numeric cell, so at most 10
+        3. The third loop will run for every valid knight jump we can make
+           from every numeric cell. At most 3
+    4. Before going to the second loop, we are going to create another auxilary
+       list that will contain all the possible combinations for each numeric cell
+       using the indices to indicate the corresponding positions. This list
+       will keep track of the current combinations for the current jump but will
+       use the external list to make sure we have the correct combinations for
+       our current jump.
+    5. Return the sum of the external auxilary list
+
+
+
+[2, 2, 2, 2, 3, 0, 3, 2, 2, 2]
+
+[0, 0, 0, 0, 2, 0, 0, 0, 0, 0]
+# ['40', '606', '616', '81', '72', '92', '43', '83', '404', '34', '94', '406', '76', '16', '27', '676', '18', '38', '49', '29']
+curr_phone_pad[value] = (phone_pad[key] + curr_phone_pad[value]) % 10^9 + 7
+
+
+
+sum(phone_pad) module it
