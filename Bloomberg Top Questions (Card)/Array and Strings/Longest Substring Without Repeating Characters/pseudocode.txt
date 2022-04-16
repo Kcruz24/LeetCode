@@ -1,0 +1,16 @@
+Steps:
+
+    1. Create a “last_seen” hash table
+    2. Initiate an array with two initial values, 0 and 1 to indicate our starting indices
+    3. Initiate a start_idx variable starting at 0 to keep track of our current starting point in our current longest substring
+    4. loop through the given string
+    5. Check if the current character has been “seen” in our hash table, we update our start_idx variable to be the max between itself and the current character value in our hash table plus 1, ex:
+
+        ```python
+        if char in last_seen:
+            start_idx = max(start_idx, last_seen[char] + 1)
+        ```
+
+    6. Check if the running substring is greater than our current substring, if it is, then update our current substring with the running substring
+    7. Update everytime at the end of the loop the “last_seen” hashtable with the character as the key and the current idx as the value
+    8. after the loop ends, return the length of our longest substring

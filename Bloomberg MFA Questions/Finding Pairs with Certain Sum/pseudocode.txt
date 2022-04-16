@@ -1,0 +1,29 @@
+Steps:
+
+Constructor method:
+
+    1. Create a frequency hashmap for the nums2 array
+
+Add method:
+
+    1. Substract 1 from the current value in our hashmap since we are going to be eliminating in from it (updating actually)
+    2. Add the given value to the corresponding index in nums2
+    3. Add 1 frequency in the hashmap to the newly updated value
+
+Count method:
+
+    1. Create a pairs_sum variable to keep track of all the pairs that sum up to the given total target.
+    2. Run a loop through the nums1 array
+    3. Add to the pairs_sum variable the value of the potential match in our hashmap, using the potential match as a key, example:
+
+    ```python
+    pairs_sum = 0
+
+    for num in nums1:
+    	potential_match = target - num
+    	pairs_sum += hashmap[potential_match]
+
+    return pairs_sum
+    ```
+
+    4. Return the pairs_sum variable

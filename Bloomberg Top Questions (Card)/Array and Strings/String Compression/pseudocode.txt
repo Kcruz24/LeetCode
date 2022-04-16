@@ -1,0 +1,20 @@
+Steps:
+    1. Create the empty 's' string variable
+    2. Initialize a counter variable to 1
+    3. start a loop with the length of the input array
+        1. if the prev char is equal to the current char:
+            1. add one to the counter
+        2. if the prev char is not equal to the current char
+            1. append the prev char to the 's' variable
+            2. append the current counter to the 's' variable
+            3. reset counter to 1
+    4. if counter is equal to 1:
+        1. append only the char to the 's' variable
+    5. else, append the last char with the current counter to the 's' variable.
+
+    Modify input char array:
+        1. start a loop with the length of the 's' variable
+        2. at each iteration replace the corresponding idx position from the
+        input variable with the a's' variable
+
+    6. return the input chars variable sliced up until the length of the 's' variable
