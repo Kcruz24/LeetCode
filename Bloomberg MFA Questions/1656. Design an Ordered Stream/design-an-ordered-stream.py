@@ -1,7 +1,7 @@
 from typing import List
 from collections import deque
 
-
+# Solution
 # O(N) time | O(N) space
 class OrderedStream3:
     def __init__(self, n: int):
@@ -12,8 +12,9 @@ class OrderedStream3:
         self.stream[id - 1] = value
 
         ordered_stream = []
-        while self.ptr < len(self.stream) and self.stream[self.ptr] is not None:
-            ordered_stream.append(self.stream[self.ptr])
+        while self.ptr < len(self.stream) and self.stream[self.ptr]:
+            stream_value = self.stream[self.ptr]
+            ordered_stream.append(stream_value)
             self.ptr += 1
 
         return ordered_stream

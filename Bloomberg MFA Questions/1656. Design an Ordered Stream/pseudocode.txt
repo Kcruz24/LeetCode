@@ -1,0 +1,14 @@
+Steps:
+
+* Constructor:
+    1. initialize an empty stream array with the size of input “n” we are given.
+    2. initialize a pointer with 0
+
+* insert(id, value) method:
+    1. put the given value to the (id - 1) position in our array.
+    2. Initialize an empty ordered_stream array
+    3. Run a loop that will run while our pointer is less than the length of
+       the stream array and while there is a value in our stream[pointer] position
+        a. append to the ordered_stream array our stream[pointer] value
+        b. increase our pointer by 1
+    4. return the ordered_stream array.
