@@ -1,0 +1,12 @@
+Steps:
+    1. Intialize a stack as an empty list, the stack will store a list which
+       consists of a list with a char and its count, ex:
+           a. stack = [[char, counter]]
+    2. Traverse through the string
+    3. at each iteration check if the stack is not empty and if the top of the
+       stack is equal to the current character, if it is, then add one to the counter
+       on top of the stack, otherwise add the current character with a counter of
+       1 to the stack
+    4. then check again if the stack is not empty and if the counter on top of the
+       stack is equal to k, if it is, then pop from the stack.
+    5. Create a string from the stack by joining its values and return it
