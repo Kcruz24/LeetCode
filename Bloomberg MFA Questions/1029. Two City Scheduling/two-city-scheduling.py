@@ -45,9 +45,8 @@ class Solution:
     def twoCitySchedCost(self, costs: List[List[int]]) -> int:
         # Sort by a gain which company has
         # by sending a person to city A and not to city B
-        print(costs)
         costs.sort(key=lambda x: x[0] - x[1])
-        print(costs)
+
 
         total = 0
         n = len(costs) // 2

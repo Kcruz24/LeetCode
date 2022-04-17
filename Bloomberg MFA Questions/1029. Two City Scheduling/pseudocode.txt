@@ -1,0 +1,15 @@
+Steps:
+    1. Sort in ascending order by the difference of
+       each city cost. This can mean a gain or lose by the
+       company depending of where we send current person.
+    2. initialize an N variable indicating the persons for each
+       city.
+    3. initialize a city_a_cost variable to store the sum of
+       the first n persons we are going to send to city A, that
+       would be the first half after sorting.
+    4. initializa a city_b_cost variable to store the the sum of
+       the second n persons we are going to send to city B, that
+       would starting from the half plus 1 after sorting.
+    5. Run a loop and add the costs to each variable accordingly.
+    6. Return the sum of both variables. That is the minimum cost
+       to fly every person to each city.
