@@ -1,0 +1,14 @@
+Steps:
+    1. Check if the head is null, if it is, return
+    2. Initialize the stack for the iterative dfs
+    3. Initialize a prev_node variable to keep track
+       of the previous node
+    4. During the dfs:
+        - check if prev_node is not null, if it is, we keep
+          going. If is not, then we update our prev_node
+          pointers and our current node pointers
+        - Whenever we find a node with a child, we set the
+          child to null
+        - at the end of the dfs, update our prev_node to be
+          equal to the current node.
+    5. return the head
