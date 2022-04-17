@@ -1,0 +1,25 @@
+* Constructor:
+    1. Initialize two hashmaps, one to keep track of people when they check in,
+        and one to keep track of the stations travel times and total trips.
+        The hashmap that will keep track of the travel times and total trips
+        will be initialized with a defaultdict() with a value of an empty list
+        with a length of 2 (Like this → [0, 0]). Ex:
+            a. people_info = {}
+            b. travel_times = defaultdict(lambda: [0, 0])
+
+* checkIn(id, stationName, time) method:
+    1. Just assign the current station and time to the corresponding
+       person by their id.
+
+* checkOut(id, stationName, time) method:
+    1. Get the start station and start time from the current person who is
+       checkin out, then we add at the first position of the travel_times
+       hashmap the difference between the end time and start time (This would
+       be the time it took for that person to travel from station_A to
+       station_B), as for the second position, we just add one, indicating
+       that a trip was made from those stations.
+
+* getAverageTime(startStation, endStation) mehtod:
+    1. We just need to get the total_time and total_trips from the corresponding
+       start_station and end_station, after that, we just return total_time
+       divided by the total_trips.
