@@ -1,44 +1,43 @@
 from typing import List
 
-
+# From: https://leetcode.com/problems/count-unhappy-friends/discuss/1890091/Python-Make-you-happy-with-clean-and-concise-solution
 class Solution:
+    # O(N^2) time | O(N^2) space
     def unhappyFriends(self, n: int, preferences: List[List[int]], pairs: List[List[int]]) -> int:
+        # Map to get pair mapping
+        pairMap = {}
+        # To get preference of person i with person j in O(1)
+        prefer = {}
 
-        dd = {}
+        # Populating pairMap
+        for p1, p2 in pairs:
+            pairMap[p1] = p2
+            pairMap[p2] = p1
 
-        for i, x in pairs:
-            dd[i] = preferences[i][:preferences[i].index(x)]
-            dd[x] = preferences[x][:preferences[x].index(i)]
+        # Populating prefer Map
+        for i in range(len(preferences)):
+            for j in range(n-1):
+                if i not in prefer:
+                    prefer[i] = {}
+                prefer[i][preferences[i][j]] = j
 
-        ans = 0
-
-        for i in dd:
-            for x in dd[i]:
-                if i in dd[x]:
-                    ans += 1
+        # Looping through preferences again to find if person i is unhappy
+        res = 0
+        for i in range(len(preferences)):
+            for j in range(n-1):
+                x = i
+                y = pairMap[x]
+                u = preferences[x][j]
+                v = pairMap[u]
+                
+                if prefer[x][u] < prefer[x][y] and prefer[u][x] < prefer[u][v]:
+                    res += 1
                     break
-
-        return ans
-
-
-class Solution2:
-    def unhappyFriends(self, n: int, preferences: List[List[int]], pairs: List[List[int]]) -> int:
-        likemore = {}
-        for a, b in pairs:
-            likemore[a] = set(preferences[a][:preferences[a].index(b)])
-            likemore[b] = set(preferences[b][:preferences[b].index(a)])
-
-        unhappy = set()
-        for i in range(n):
-            for j in range(i):
-                if(i in likemore[j] and j in likemore[i]):
-                    unhappy.add(i)
-                    unhappy.add(j)
-        return len(unhappy)
+        return res
 
 
 if __name__ == '__main__':
-    sol = Solution2()
+    sol = Solution()
 
     n = 4
     preferences = [[1, 2, 3], [3, 2, 0], [3, 1, 0], [1, 2, 0]]
