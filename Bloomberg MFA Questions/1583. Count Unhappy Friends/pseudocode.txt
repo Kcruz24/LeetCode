@@ -1,0 +1,11 @@
+Steps:
+    1. Initialize a "pairMap" to map the pairs
+    2. Initialize a "prefer" map to get the preference of person i with person j
+       in O(1) time
+    3. Populate both maps
+    4. Initialize a "ans" variable to store the answer
+    5. run a double loop, the outer for the preferences and the inner for
+       n - 1 range
+          a. Check if x prefers u over y and u prefers x over v
+          b. if true, increase “ans” by 1 and break out of the inner loop
+    6. Return the “ans” variable
