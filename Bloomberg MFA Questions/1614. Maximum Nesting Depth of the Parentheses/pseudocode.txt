@@ -1,0 +1,11 @@
+Steps:
+    1. Initialize an empty stack
+    2. initialize a depth and maxDepth variables
+    3. run a for loop for every character in the "s" string
+    4. Whenever we find an open parenthesis, we add it to the
+       stack and increase our depth by 1
+    5. update the maxDepth with the max(maxDepth, depth)
+    6. Whenever we find a closing parenthesis, we decrease our
+       depth by 1
+    7. Return the maxDepth variable
+    
