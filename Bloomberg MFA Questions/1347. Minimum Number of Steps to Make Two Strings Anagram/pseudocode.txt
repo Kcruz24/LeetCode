@@ -1,0 +1,10 @@
+Steps:
+
+    1. Create hashmap of the frequencies in the “s” string
+    2. Intialize a “steps” variable to keep track of the minimum number of steps
+    3. for every character in the “t” string:
+        a. Check if the current character count in the hashmap is greater than 0,
+        if it is, we decrease the counter
+        b. If the current character count is 0 meaning that is not in the “s”
+        string anymore, we increase the “steps” variable by 1
+    4. Return the “steps” variable
