@@ -39,12 +39,11 @@ class Solution:
         return head
 
 
-
-
+class Solution2:
     # O(N) time | O(N) space
     # Runtime: 24 ms, Faster than 99.25% of python solutions
     def flatten(self, head: Node) -> Node:
-	# define self.prev as global variant
+        # define self.prev as global variant
         self.prev = None
         self.dfs(head)
         return head
@@ -62,8 +61,7 @@ class Solution:
         # since the next node has been changed after dfs, we need to keep the original next node
         next = cur.next
 
+        self.dfs(next)
         self.dfs(cur.child)
         # after we have traversed the cur.child, we need to set cur.child is None
         cur.child = None
-
-        self.dfs(next)
