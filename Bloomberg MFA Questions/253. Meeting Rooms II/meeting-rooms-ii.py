@@ -20,31 +20,35 @@ class Solution:
 
 
 class Solution2:
-    # O(NLog(N)) time | O(N) space
+    # O(Nlog(N)) Time | O(N) Space
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
-        if intervals is None:
-            return 0
 
-        sorted_end_times = sorted(intervals, key=lambda x: x[1])
-        sorted_start_times = sorted(intervals, key=lambda x: x[0])
+        start_times = []
+        end_times = []
 
-        minimum_rooms = 0
+        for start, end in intervals:
+            start_times.append(start)
+            end_times.append(end)
+
+        start_times.sort()
+        end_times.sort()
 
         start_ptr = 0
         end_ptr = 0
+        used_rooms = 0
 
-        while start_ptr < len(sorted_start_times):
-            start_time = sorted_start_times[start_ptr][0]
-            end_time = sorted_end_times[end_ptr][1]
+        while start_ptr < len(intervals):
+            start_room = start_times[start_ptr]
+            end_room = end_times[end_ptr]
 
-            if start_time < end_time:
-                minimum_rooms += 1
-                start_ptr += 1
+            if start_room < end_room:
+                used_rooms += 1
             else:
-                start_ptr += 1
                 end_ptr += 1
 
-        return minimum_rooms
+            start_ptr += 1
+
+        return used_rooms
 
 
 class Solution3:
