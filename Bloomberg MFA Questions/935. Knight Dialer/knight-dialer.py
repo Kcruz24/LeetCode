@@ -38,13 +38,12 @@ class Solution:
                         str_knight_arr.pop()
 
             jumps = new_jumps
-        print(sorted(jumps))
-        print('hey')
+        
         return len(jumps)
 
+class Solution:
+    # O(N) Time | O(1) Space
     def knightDialer(self, n):
-        # Neighbors maps K: starting_key -> V: list of possible destination_keys
-
         neighbors = {
             0: (4, 6),
             1: (6, 8),
@@ -58,17 +57,15 @@ class Solution:
             9: (2, 4)
         }
 
-        # 0: 2
-        # 4: 3
-        # 6: 3
-
         default_num_pad = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
         jumps = n - 1
 
         # Jumps
         for _ in range(jumps):
             num_pad = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+            # Numeric Cells
             for key in neighbors:
+                # Unique jumps
                 for value in neighbors[key]:
                     num_pad[value] = (num_pad[value] + default_num_pad[key]) % (10**9 + 7)
             default_num_pad = num_pad
