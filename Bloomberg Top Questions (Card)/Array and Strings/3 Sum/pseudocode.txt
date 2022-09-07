@@ -1,0 +1,15 @@
+Steps:
+    - Sort the input array
+    - Initialize a “triplets” variable
+    - loop through the input array
+        - if the current number is greater than 0, break out of the loop because
+          the sum will not be equal to 0 anymore
+        - if the current number is equal to the previous one, continue to the
+          next iteration
+        - call the twoSum function and pass in the input array, the current idx,
+          the targetSum and the “triplets” variable
+
+twoSum:
+    - do a left and right pointer technique
+    - whenever we append the result, run a while loop to increase our left
+      pointer by one if the left pointer previous number is equal

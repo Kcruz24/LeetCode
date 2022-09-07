@@ -1,0 +1,3 @@
+Steps:
+    1. Count the frequencies of each input string with a hashtable
+    2. Compare them, if they are equal, return True, otherwise return False
