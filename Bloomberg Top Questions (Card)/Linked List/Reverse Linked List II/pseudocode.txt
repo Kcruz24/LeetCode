@@ -1,0 +1,14 @@
+Steps:
+    1. check if the input head is null
+    2. set a trav pointer to reference the head
+    3. set a prev pointer equal to null
+    4. Move trav along with prev to be at the starting point
+       of the sub linked list to be reversed
+    5. Leave a copy of both trav and prev pointers, these pointers
+       will be fixing the final connections.
+    6. Start a traditional reverse of the linked list
+    7. At the end, if there's a copy of the prev pointer (tail_prev)
+       assign tail_prev.next to be equal to prev (head after reversal),
+       otherwise, set head to point to prev
+    8. assign tail.next (the copy of trav) to point to trav
+    9. return the head of the linked list.
