@@ -35,6 +35,13 @@ class Solution:
         right_max = 0
 
         ans = 0
+        '''
+        height = [0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1]
+                                       ||
+        left_max = 2
+        right_max = 2
+        ans = 6
+        '''
         while left < right:
             if height[left] < height[right]:
                 if height[left] >= left_max:

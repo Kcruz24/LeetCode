@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import List
 
 # From: https://leetcode.com/problems/count-unhappy-friends/discuss/1890091/Python-Make-you-happy-with-clean-and-concise-solution
@@ -29,12 +30,38 @@ class Solution:
                 y = pairMap[x]
                 u = preferences[x][j]
                 v = pairMap[u]
-                
+
                 if prefer[x][u] < prefer[x][y] and prefer[u][x] < prefer[u][v]:
                     res += 1
                     break
         return res
 
+
+class Solution:
+    # Graph
+    def unhappyFriends(self, n: int, preferences: List[List[int]], pairs: List[List[int]]) -> int:
+        # build directed graph of unhappy pairs
+        graph = defaultdict(set)
+        for (u, v) in pairs:
+            for friend_v in preferences[u]:
+                if friend_v == v:
+                    break
+                graph[u].add(friend_v)
+
+            for friend_u in preferences[v]:
+                if friend_u == u:
+                    break
+                graph[v].add(friend_u)
+
+        unhappy = 0
+        # counts vertices that have a bidirectional path
+        for friend in range(n):
+            for neighbor in list(graph[friend]):
+                if friend in graph[neighbor]:
+                    unhappy += 1
+                    break
+
+        return unhappy
 
 if __name__ == '__main__':
     sol = Solution()

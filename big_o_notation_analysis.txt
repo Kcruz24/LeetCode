@@ -1,0 +1,42 @@
+
+1st example
+    # O(N) Time | O(1) Space
+    function findMax(arr):
+        maxVal = arr[0]
+
+        for i from 1 to arr.length - 1:
+            if arr[i] > maxVal:
+                maxVal = arr[i]
+
+        return maxVal
+
+
+2nd example
+
+    # O(N) Time | O(1) Space
+    function bubbleSort(arr):
+        n = arr.length
+
+        for i from 0 to n: # O(N) Time
+            for j from 0 to 26: # O(1) Time
+
+                if arr[j] > arr[j+1]:
+                    swap arr[j] and arr[j+1]
+
+        return arr
+
+
+
+
+3rd example
+    # O(N^3) Time | O(1) Space
+    function multiply(A, B):
+        n = A.rows
+        C = zero matrix n×n
+
+        for i from 0 to n-1:
+            for j from 0 to n-1:
+                for k from 0 to n-1:
+                    C[i][j] = C[i][j] + A[i][k] * B[k][j]
+
+        return C

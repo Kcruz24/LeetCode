@@ -12,9 +12,9 @@ Explanation: The set of distinct strings is
 class Solution:
     # O(N^2) Time | O(N) Space
     def countDistinct(self, s: str) -> int:
-        substrings = []
+        substrings = set()
         for i in range(len(s)):
             for j in range(i + 1, len(s) + 1):
-                substrings.append(s[i:j])
+                substrings.add(s[i:j])
 
-        return len(set(substrings))
+        return len(substrings)
